@@ -37,9 +37,13 @@ export default {
 .page-header {
   background-color: #FF6900;
   width: 100%;
-  padding: 20px 0;
+  padding: 10px 0;
   font-size: 20px;
-
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
 
   .container {
     max-width: 1200px;

@@ -39,9 +39,10 @@ export default {
 <style scoped>
 .page-footer {
   background-color: #1A1A1A;
-  padding: 20px 0;
-  font-size: 20px;
+  padding: 15px 0;
+  font-size: 15px;
   color: white;
+
 
   .container-footer {
     max-width: 1200px;
@@ -49,7 +50,7 @@ export default {
   }
 
   img {
-    max-width: 30px;
+    max-width: 25px;
   }
 
   .row-footer {
@@ -58,14 +59,13 @@ export default {
   }
 
   h4 {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .informatives {
-    margin-top: 20px;
 
     li {
-      margin: 10px 0;
+      margin: 5px 0;
     }
   }
 
