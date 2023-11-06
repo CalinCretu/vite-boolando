@@ -69,7 +69,8 @@ export default {
     }
   }
 
-  .social-footer {
+  .social-footer,
+  .informatives {
     margin-top: 20px;
     display: flex;
 
