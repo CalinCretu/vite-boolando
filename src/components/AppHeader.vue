@@ -3,7 +3,35 @@ export default {
   name: "AppHeader",
   data() {
     return {
-      title: 'Header'
+      title: 'Header',
+      menu: [
+        {
+          text: 'Donna',
+          href: '#'
+        },
+        {
+          text: 'Uomo',
+          href: '#'
+        },
+        {
+          text: 'Bambini',
+          href: '#'
+        }
+      ],
+      icons: [
+        {
+          text: 'ICON-1',
+          href: '#'
+        },
+        {
+          text: 'ICON-2',
+          href: '#'
+        },
+        {
+          text: 'ICON-3',
+          href: '#'
+        }
+      ]
     }
   }
 }
@@ -15,17 +43,18 @@ export default {
       <div class="row-header justify-between">
         <div class="col">
           <ul class="gender">
-            <li><a href="#">Donna</a></li>
-            <li><a href="#">Uomo</a></li>
-            <li><a href="#">Bambini</a></li>
+            <li v-for="(link, i) in menu" :key="i">
+              <a :href="link.href">{{ link.text }}</a>
+            </li>
           </ul>
         </div>
         <div class="col "><a href="#"><img class="logo" src="/boolean-logo.png" alt="Boolean_Logo"></a></div>
         <div class="col">
           <ul class="social-header">
-            <li><a href="#">ICON</a></li>
-            <li><a href="#">ICON</a></li>
-            <li><a href="#">ICON</a></li>
+            <li v-for="(button, i) in icons" :key="i">
+              <a :href="button.href">{{ button.text }}</a>
+            </li>
+
           </ul>
         </div>
       </div>

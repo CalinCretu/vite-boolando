@@ -16,19 +16,19 @@ export default {
         <div class="col">
           <h4>Boolando s.r.l.</h4>
           <ul class="informatives">
-            <li><a href="*">Informazioni legali</a></li>
-            <li><a href="*">Informativa sulla privacy</a></li>
-            <li><a href="*">Diritto di recesso</a></li>
+            <li><a href="#">Informazioni legali</a></li>
+            <li><a href="#">Informativa sulla privacy</a></li>
+            <li><a href="#">Diritto di recesso</a></li>
           </ul>
         </div>
         <div class="col">
           <h4>Trovaci anche su</h4>
           <ul class="social-footer">
-            <li><a href="*"><img id="person-svg" src="/twitter-svgrepo-com.svg" alt=""></a></li>
-            <li><a href="*"><img id="heart-svg" src="/facebook-svgrepo-com.svg" alt=""></a></li>
-            <li><a href="*"><img id="bag-svg" src="/instagram-social-svgrepo-com.svg" alt=""></a></li>
-            <li><a href="*"><img id="bag-svg" src="/pinterest-svgrepo-com.svg" alt=""></a></li>
-            <li><a href="*"><img id="bag-svg" src="/youtube-svgrepo-com.svg" alt=""></a></li>
+            <li><a href="#"><img id="person-svg" src="/twitter-svgrepo-com.svg" alt=""></a></li>
+            <li><a href="#"><img id="heart-svg" src="/facebook-svgrepo-com.svg" alt=""></a></li>
+            <li><a href="#"><img id="bag-svg" src="/instagram-social-svgrepo-com.svg" alt=""></a></li>
+            <li><a href="#"><img id="bag-svg" src="/pinterest-svgrepo-com.svg" alt=""></a></li>
+            <li><a href="#"><img id="bag-svg" src="/youtube-svgrepo-com.svg" alt=""></a></li>
           </ul>
         </div>
       </div>
