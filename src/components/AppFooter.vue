@@ -1,9 +1,57 @@
 <script>
+import FooterInformatives from './FooterInformatives.vue';
+import FooterSocialLinks from './FooterSocialLinks.vue';
 export default {
+  components: {
+    FooterInformatives,
+    FooterSocialLinks,
+  },
   name: 'AppFooter',
   data() {
     return {
-      title: 'prova',
+      title: 'Footer',
+      footerInformatives: {
+        title: 'Booleando s.r.l.',
+        links: [
+          {
+            text: 'Informazioni legali',
+            herf: '#'
+          },
+          {
+            text: 'Informativa sulla privacy',
+            herf: '#'
+          },
+          {
+            text: 'Diritto di recesso',
+            herf: '#'
+          }
+        ]
+      },
+      footerSocialLinks: {
+        title: 'Trovaci anche su',
+        links: [
+          {
+            src: '/twitter-svgrepo-com.svg',
+            href: '#'
+          },
+          {
+            src: '/facebook-svgrepo-com.svg',
+            href: '#'
+          },
+          {
+            src: '/instagram-social-svgrepo-com.svg',
+            href: '#'
+          },
+          {
+            src: '/pinterest-svgrepo-com.svg',
+            href: '#'
+          },
+          {
+            src: '/youtube-svgrepo-com.svg',
+            href: '#'
+          }
+        ]
+      }
     }
   }
 }
@@ -13,24 +61,8 @@ export default {
   <footer class="page-footer">
     <nav class="container-footer">
       <div class="row-footer justify-between">
-        <div class="col">
-          <h4>Boolando s.r.l.</h4>
-          <ul class="informatives">
-            <li><a href="#">Informazioni legali</a></li>
-            <li><a href="#">Informativa sulla privacy</a></li>
-            <li><a href="#">Diritto di recesso</a></li>
-          </ul>
-        </div>
-        <div class="col">
-          <h4>Trovaci anche su</h4>
-          <ul class="social-footer">
-            <li><a href="#"><img id="person-svg" src="/twitter-svgrepo-com.svg" alt=""></a></li>
-            <li><a href="#"><img id="heart-svg" src="/facebook-svgrepo-com.svg" alt=""></a></li>
-            <li><a href="#"><img id="bag-svg" src="/instagram-social-svgrepo-com.svg" alt=""></a></li>
-            <li><a href="#"><img id="bag-svg" src="/pinterest-svgrepo-com.svg" alt=""></a></li>
-            <li><a href="#"><img id="bag-svg" src="/youtube-svgrepo-com.svg" alt=""></a></li>
-          </ul>
-        </div>
+        <FooterInformatives :title="footerInformatives.title" :links="footerInformatives.links" />
+        <FooterSocialLinks :title="footerSocialLinks.title" :links="footerSocialLinks.links" />
       </div>
     </nav>
   </footer>
@@ -60,27 +92,6 @@ export default {
 
   h4 {
     font-size: 20px;
-  }
-
-  .informatives {
-
-    li {
-      margin: 5px 0;
-    }
-  }
-
-  .social-footer,
-  .informatives {
-    margin-top: 20px;
-    display: flex;
-
-    li {
-      margin-right: 20px;
-    }
-
-    li:last-child {
-      margin-right: 0;
-    }
   }
 }
 </style>

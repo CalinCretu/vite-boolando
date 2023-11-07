@@ -30,7 +30,7 @@ export default {
         {
           text: 'ICON-3',
           href: '#'
-        }
+        },
       ]
     }
   }
