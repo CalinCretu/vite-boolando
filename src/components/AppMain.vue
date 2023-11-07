@@ -1,10 +1,8 @@
 <script>
 export default {
   name: "AppMain",
-  data() {
-    return {
+  props: {
 
-    }
   }
 }
 </script>
@@ -18,6 +16,7 @@ export default {
             <div class="card">
               <figure class="card__image">
                 <img class="image-main" src="/1.webp" alt="">
+                <img class="image-hover" src="/1b.webp" alt="">
                 <span class="hearts">&hearts;</span>
                 <div class="flags">
                   <span class="flag-red">-50%</span>
@@ -35,7 +34,7 @@ export default {
   </main>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .section {
   margin-top: 120px;
   margin-bottom: 120px;
@@ -79,6 +78,20 @@ export default {
   }
 
   .card__image {
+    .image-hover {
+      display: none;
+    }
+
+    &:hover {
+      .image-main {
+        display: none;
+      }
+
+      .image-hover {
+        display: block;
+      }
+    }
+
     position: relative;
 
     .flags {
