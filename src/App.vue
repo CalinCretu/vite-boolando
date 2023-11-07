@@ -7,12 +7,11 @@ export default {
     AppHeader,
     AppMain,
     AppFooter,
-
-
   },
   name: 'App',
   data() {
     return {
+
     }
   }
 }
