@@ -1,7 +1,9 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
-import AppMain from './components/AppMain.vue'
+import AppMain from './components/AppMain.vue';
 import AppFooter from './components/AppFooter.vue';
+import axios from 'axios';
+import { store } from './store';
 export default {
   components: {
     AppHeader,
@@ -11,8 +13,17 @@ export default {
   name: 'App',
   data() {
     return {
-
+      store: store,
     }
+  },
+  created() {
+    axios.get('http://localhost:3000/products')
+      .then(res => {
+        console.log(res.data);
+        const card = res.data;
+        console.log(card);
+        this.store.card = card;
+      })
   }
 }
 </script>
