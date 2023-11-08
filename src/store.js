@@ -1,6 +1,5 @@
 import { reactive } from 'vue'
-
+import prodottoJSON from './db.json'
 export const store = reactive({
-  message: 'Store Creation',
+  card: prodottoJSON.products,
 })
-

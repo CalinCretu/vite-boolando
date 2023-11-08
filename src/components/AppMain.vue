@@ -1,6 +1,6 @@
 <script>
 import ProductCard from './ProductCard.vue';
-import ProductsJson from '../db.json';
+import { store } from '../store'
 export default {
   components: {
     ProductCard
@@ -8,7 +8,7 @@ export default {
   name: "AppMain",
   data() {
     return {
-      products: ProductsJson.products
+      products: store.card
     }
   }
 }

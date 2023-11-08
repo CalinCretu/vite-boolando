@@ -1,10 +1,12 @@
 <script>
+import { store } from '../store'
 export default {
   props: {
     prodotto: Object
   },
   data() {
     return {
+      products: store.card
     }
   }
 }
