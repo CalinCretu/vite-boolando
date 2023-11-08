@@ -1,6 +1,7 @@
 <script>
 import FooterInformatives from './FooterInformatives.vue';
 import FooterSocialLinks from './FooterSocialLinks.vue';
+import { store } from '../store';
 export default {
   components: {
     FooterInformatives,
@@ -9,6 +10,7 @@ export default {
   name: 'AppFooter',
   data() {
     return {
+      store,
       title: 'Footer',
       footerInformatives: {
         title: 'Booleando s.r.l.',
@@ -61,6 +63,7 @@ export default {
   <footer class="page-footer">
     <nav class="container-footer">
       <div class="row-footer justify-between">
+        <div>{{ store.message }}</div>
         <FooterInformatives :title="footerInformatives.title" :links="footerInformatives.links" />
         <FooterSocialLinks :title="footerSocialLinks.title" :links="footerSocialLinks.links" />
       </div>
