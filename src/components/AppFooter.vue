@@ -75,7 +75,6 @@ export default {
   font-size: 15px;
   color: white;
 
-
   .container-footer {
     max-width: 1200px;
     margin: 0 auto;
