@@ -20,15 +20,15 @@ export default {
       ],
       icons: [
         {
-          text: 'ICON-1',
+          text: 'fa-regular fa-user',
           href: '#'
         },
         {
-          text: 'ICON-2',
+          text: 'fa-regular fa-heart',
           href: '#'
         },
         {
-          text: 'ICON-3',
+          text: 'fa-brands fa-opencart',
           href: '#'
         },
       ]
@@ -52,9 +52,8 @@ export default {
         <div class="col">
           <ul class="social-header">
             <li v-for="(button, i) in icons" :key="i">
-              <a :href="button.href">{{ button.text }}</a>
+              <a :href="button.href"> <font-awesome-icon :icon="button.text" /></a>
             </li>
-
           </ul>
         </div>
       </div>
