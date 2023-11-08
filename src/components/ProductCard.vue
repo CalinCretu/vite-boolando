@@ -15,7 +15,7 @@ export default {
     <figure class="card__image">
       <img class="image-main" :src="`/imgs/${prodotto.frontImage}`" alt="">
       <img class="image-hover" :src="`/imgs/${prodotto.backImage}`" alt="">
-      <span class="hearts">&hearts;</span>
+      <span class="hearts" :style="{ color: prodotto.isInFavorites ? 'red' : 'black' }">&hearts;</span>
       <div class="flags">
         <template v-if="prodotto.badges && prodotto.badges.some((badge) => badge.type === 'discount')">
           <span class="flag-red">{{ prodotto.badges.find(badge => badge.type === 'discount').value }}</span>
