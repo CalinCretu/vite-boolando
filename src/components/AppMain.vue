@@ -66,7 +66,12 @@ export default {
               <template v-if="selectedCard.badges && selectedCard.badges.some((badge) => badge.type === 'discount')">
                 <span class="flag-green">{{ 'Special Offer' }}: {{ selectedCard.badges.find(badge => badge.type ===
                   'discount').value }}</span>
+                <div>Other Photos:</div>
               </template>
+            </div>
+            <div class="other-foto">
+
+              <img class="other-image" :src="`/imgs/${selectedCard.backImage}`" alt="">
             </div>
           </div>
         </div>
@@ -121,6 +126,18 @@ export default {
       }
     }
 
+    .other-foto {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 300px;
+      height: 400px;
+
+      .other-image {
+        width: 200px;
+      }
+    }
+
 
 
     .specs-col {
@@ -133,7 +150,7 @@ export default {
       display: block;
       background-color: rgba(0, 0, 0, 0.2);
       width: 1px;
-      height: 100px;
+      height: 120px;
       position: fixed;
       right: 43%;
       top: 11%;
