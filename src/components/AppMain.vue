@@ -46,13 +46,28 @@ export default {
         </div>
         <div class="card__body">
           <div>
-            <img class="image" :src="`/imgs/${selectedCard.frontImage}`" alt="">
+            <div class="image-col">
+              <img class="image" :src="`/imgs/${selectedCard.frontImage}`" alt="">
+            </div>
           </div>
-          <div>
-            Product Brand: {{ selectedCard.brand }}
-          </div>
-          <div>
-            Product Price: {{ selectedCard.price }} &euro;
+          <div class="specs-col">
+            <div>
+              Product Brand: {{ selectedCard.brand }}
+            </div>
+            <div>
+              Product Price: {{ selectedCard.price }} &euro;
+            </div>
+            <div>
+              <template v-if="selectedCard.badges && selectedCard.badges.some((badge) => badge.type === 'tag')">
+                <span class="flag-green">{{ 'Nature Lover' }}</span>
+              </template>
+            </div>
+            <div>
+              <template v-if="selectedCard.badges && selectedCard.badges.some((badge) => badge.type === 'discount')">
+                <span class="flag-green">{{ 'Special Offer' }}: {{ selectedCard.badges.find(badge => badge.type ===
+                  'discount').value }}</span>
+              </template>
+            </div>
           </div>
         </div>
       </div>
@@ -82,7 +97,7 @@ export default {
   border-radius: 20px;
   padding: 20px;
   width: 100%;
-  max-width: 500px;
+  max-width: 800px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
 
   .card__header {
@@ -93,5 +108,47 @@ export default {
     font-weight: 700;
   }
 
+  .card__body {
+    margin: 20px;
+    display: flex;
+
+    .image-col {
+      margin-right: 10px;
+
+      .image {
+        border-radius: 20px;
+        width: 400px;
+      }
+    }
+
+
+
+    .specs-col {
+      margin-left: 20px;
+      line-height: 1.5rem;
+    }
+
+    .specs-col::before {
+      content: '';
+      display: block;
+      background-color: rgba(0, 0, 0, 0.2);
+      width: 1px;
+      height: 100px;
+      position: fixed;
+      right: 43%;
+      top: 11%;
+    }
+
+    .specs-col::after {
+      content: '';
+      display: block;
+      background-color: rgba(0, 0, 0, 0.2);
+      width: 750px;
+      height: 1px;
+      position: fixed;
+      right: 3%;
+      top: 8%;
+    }
+  }
 }
 </style>
