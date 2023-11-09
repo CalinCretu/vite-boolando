@@ -19,7 +19,7 @@ export default {
   created() {
     axios.get('http://localhost:3000/products')
       .then(res => {
-        const card = res.data;
+        const card = res.data
         this.store.card = card;
       })
   }

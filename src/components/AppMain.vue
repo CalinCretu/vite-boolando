@@ -8,7 +8,7 @@ export default {
   name: "AppMain",
   data() {
     return {
-      products: store.card
+      store: store
     }
   }
 }
@@ -19,7 +19,7 @@ export default {
     <div class="section">
       <div class="container">
         <div class="row-main">
-          <div v-for="(product, index) in products" :key="index" class="col">
+          <div v-for="(product, index) in store.card" :key="index" class="col">
             <ProductCard :prodotto="product" />
           </div>
         </div>
