@@ -17,7 +17,8 @@ export default {
     <figure class="card__image">
       <img class="image-main" :src="`/imgs/${prodotto.frontImage}`" alt="">
       <img class="image-hover" :src="`/imgs/${prodotto.backImage}`" alt="">
-      <span class="hearts" :style="{ color: prodotto.isInFavorites ? 'red' : 'black' }">&hearts;</span>
+      <span class="hearts" :style="{ color: prodotto.isInFavorites ? 'red' : 'black' }"><a href="#"><font-awesome-icon
+            icon="fa-regular fa-heart" /></a></span>
       <div class="flags">
         <template v-if="prodotto.badges && prodotto.badges.some((badge) => badge.type === 'discount')">
           <span class="flag-red">{{ prodotto.badges.find(badge => badge.type === 'discount').value }}</span>
@@ -36,7 +37,7 @@ export default {
 <style lang="scss">
 .section {
   margin-top: 120px;
-  margin-bottom: 120px;
+  margin-bottom: 80px;
 
   .container {
     max-width: 1200px;
@@ -105,13 +106,11 @@ export default {
     }
 
     .hearts {
-      width: 60px;
       text-align: center;
       font-size: 50px;
       position: absolute;
       right: 5px;
       top: 5px;
-      background-color: white;
     }
   }
 }
