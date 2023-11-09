@@ -135,6 +135,7 @@ export default {
 
       .other-image {
         width: 200px;
+        border-radius: 20px;
       }
     }
 
