@@ -8,7 +8,20 @@ export default {
   name: "AppMain",
   data() {
     return {
-      store: store
+      store: store,
+      open: false,
+      selectedCard: {},
+    }
+  },
+  methods: {
+    showModal(prodotto) {
+      console.log('show modal');
+      this.selectedCard = prodotto;
+      this.open = true;
+    },
+    closeModal() {
+      this.open = false;
+      this.selectedCard = {};
     }
   }
 }
@@ -20,7 +33,26 @@ export default {
       <div class="container">
         <div class="row-main">
           <div v-for="(product, index) in store.card" :key="index" class="col">
-            <ProductCard :prodotto="product" />
+            <ProductCard @showCard="showModal" :prodotto="product" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div v-if="open" class="modal">
+      <div class="card">
+        <div class="card__header">
+          <div class="modal-col">Product Name: {{ selectedCard.name }}</div>
+          <a href="#"><font-awesome-icon @click="closeModal" icon="fa-solid fa-circle-xmark" /></a>
+        </div>
+        <div class="card__body">
+          <div>
+            <img class="image" :src="`/imgs/${selectedCard.frontImage}`" alt="">
+          </div>
+          <div>
+            Product Brand: {{ selectedCard.brand }}
+          </div>
+          <div>
+            Product Price: {{ selectedCard.price }} &euro;
           </div>
         </div>
       </div>
@@ -28,4 +60,38 @@ export default {
   </main>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.modal::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal .card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 50;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+
+  .card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+}
+</style>

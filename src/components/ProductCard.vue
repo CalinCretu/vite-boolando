@@ -6,7 +6,12 @@ export default {
   },
   data() {
     return {
-      products: store.card
+
+    }
+  },
+  methods: {
+    onClick() {
+      this.$emit('showCard', this.prodotto)
     }
   }
 }
@@ -15,6 +20,7 @@ export default {
 <template>
   <div class="card">
     <figure class="card__image">
+      <span @click="onClick" class="expand"><a href="#"><font-awesome-icon icon="fa-solid fa-expand" /></a></span>
       <img class="image-main" :src="`/imgs/${prodotto.frontImage}`" alt="">
       <img class="image-hover" :src="`/imgs/${prodotto.backImage}`" alt="">
       <span class="hearts" :style="{ color: prodotto.isInFavorites ? 'red' : 'black' }"><a href="#"><font-awesome-icon
@@ -111,6 +117,15 @@ export default {
       position: absolute;
       right: 5px;
       top: 5px;
+    }
+
+    .expand {
+      color: grey;
+      text-align: center;
+      font-size: 50px;
+      position: absolute;
+      right: 5px;
+      bottom: 5px;
     }
   }
 }
