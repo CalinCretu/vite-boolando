@@ -61,6 +61,7 @@ export default {
 
     .product {
       font-weight: bold;
+      text-transform: uppercase;
     }
 
     .price {
