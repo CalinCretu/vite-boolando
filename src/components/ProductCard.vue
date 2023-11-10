@@ -6,13 +6,24 @@ export default {
   },
   data() {
     return {
-
+      favorites: this.prodotto.isInFavorites,
     }
   },
   methods: {
     onClick() {
       this.$emit('showCard', this.prodotto)
-    }
+    },
+    addInFavorites() {
+      if (this.favorites === false) {
+        console.log(this.favorites);
+        this.favorites = true
+        console.log(this.favorites);
+      } else if (this.favorites === true) {
+        console.log(this.favorites);
+        this.favorites = false
+        console.log(this.favorites);
+      }
+    },
   }
 }
 </script>
@@ -23,8 +34,9 @@ export default {
       <span @click="onClick" class="expand"><a href="#"><font-awesome-icon icon="fa-solid fa-expand" /></a></span>
       <img class="image-main" :src="`/imgs/${prodotto.frontImage}`" alt="">
       <img class="image-hover" :src="`/imgs/${prodotto.backImage}`" alt="">
-      <span class="hearts" :style="{ color: prodotto.isInFavorites ? 'red' : 'black' }"><a href="#"><font-awesome-icon
-            icon="fa-regular fa-heart" /></a></span>
+      <span class="hearts" :style="{ color: favorites ? 'red' : 'black' }">
+        <a @click="addInFavorites" href="#"><font-awesome-icon icon="fa-regular fa-heart" />
+        </a></span>
       <div class="flags">
         <template v-if="prodotto.badges && prodotto.badges.some((badge) => badge.type === 'discount')">
           <span class="flag-red">{{ prodotto.badges.find(badge => badge.type === 'discount').value }}</span>
