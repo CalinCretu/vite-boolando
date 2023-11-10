@@ -100,12 +100,16 @@ export default {
   z-index: 50;
   background-color: white;
   border-radius: 20px;
-  padding: 20px;
+  padding: 0px 0px 20px 0px;
   width: 100%;
   max-width: 800px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
 
   .card__header {
+    background-color: #FF6900;
+    color: white;
+    padding: 10px;
+    border-radius: 20px 20px 0px 0px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -153,7 +157,7 @@ export default {
       width: 1px;
       height: 120px;
       position: fixed;
-      right: 43%;
+      right: 45%;
       top: 11%;
     }
 
